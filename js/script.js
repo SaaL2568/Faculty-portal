@@ -15,11 +15,14 @@ async function searchProfessor() {
   }
 
   try {
-    const res = await fetch(`https://faculty-profile-93bu.onrender.com/professors/search/${encodeURIComponent(name)}`);
+    // Corrected fetch URL to use a query parameter
+    const res = await fetch(`https://faculty-profile-93bu.onrender.com/professors?search=${encodeURIComponent(name)}`);
     if (!res.ok) throw new Error("Network response was not ok");
-    const prof = await res.json();
+    const profs = await res.json(); // The backend now returns an array of professors
 
-    if (prof && prof.name) {
+    if (profs.length > 0) {
+      // Assuming you want to display the first match
+      const prof = profs[0];
       aboutBox.innerHTML = `<strong>About:</strong><br>${prof.about || "N/A"}`;
       infoBox.innerHTML = prof.research || "*Topics the faculty is interested in to research*";
       profImage.src = prof.image || "images/turtle.png"; // fallback image

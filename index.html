@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Faculty Portal</title>
+	<style>
+		body {
+			font-family: 'Segoe UI', sans-serif;
+			margin: 0;
+			background-color: #c4c8c7;
+		}
+
+		header {
+			background-color: #d1d1d1;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+
+		header img {
+			position: absolute;
+			left: 20px;
+			height: 80px;
+		}
+
+		header h1 {
+			font-family: 'Georgia', serif;
+			font-size: 36px;
+			margin: 0;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+
+		nav {
+			background-color: #003b35;
+			display: flex;
+			justify-content: center;
+			padding: 15px 0;
+			gap: 100px;
+		}
+
+		nav a {
+			background-color: #189d91;
+			color: white;
+			text-decoration: none;
+			padding: 10px 25px;
+			margin: 0 10px;
+			border-radius: 10px;
+			text-align: center;
+			font-weight: bold;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			transition: 0.3s;
+			cursor: pointer;
+			width: 200px;
+			font-size: 22px;
+		}
+
+		nav a:hover {
+			background-color: #117a72;
+		}
+
+		main {
+			padding: 30px;
+		}
+
+		section {
+			display: none;
+		}
+
+		section.active {
+			display: block;
+		}
+
+		input[type="text"],
+		textarea {
+			width: 100%;
+			padding: 8px;
+			margin: 6px 0 12px;
+			box-sizing: border-box;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		button {
+			background-color: #003b35;
+			color: white;
+			padding: 10px 15px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		form {
+			margin-top: 20px;
+			border: 1px solid #ccc;
+			padding: 20px;
+			background: #ffffff;
+			border-radius: 10px;
+		}
+
+		.flex-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+
+		.box {
+			flex: 1;
+			background: #d9d9d9;
+			padding: 20px;
+			border-radius: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.box img {
+			width: 100%;
+			border-radius: 10px;
+		}
+
+		.centered-note {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			font-weight: bold;
+			font-size: 18px;
+			background: #9b9999;
+			padding: 10px 25px;
+			border-radius: 50% / 60%;
+			width: 450px;
+			height: 80px;
+			position: absolute;
+			top: 680px;
+			left: 130px;
+			box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<img src="logo2.png" alt="Logo">
+		<h1>OUR PROFESSORS</h1>
+	</header>
+
+	<nav>
+		<a href="#home" onclick="showSection('home')">Home</a>
+		<a href="#professors" onclick="showSection('professors')">Professors</a>
+		<a href="#about" onclick="showSection('about')">About Us</a>
+	</nav>
+
+	<main>
+		<section id="home" class="active">
+			<div class="flex-container">
+				<div class="box">
+					<img src="professor.png" alt="Faculty Group">
+				</div>
+				<div class="box">
+					<p>Welcome to the official faculty profile website. Here, you can explore detailed information about
+						our
+						distinguished faculty members, including their academic qualifications, research interests,
+						publications,
+						courses taught, and contact information.</p>
+					<p>Whether you're a student looking for guidance, a researcher seeking collaboration, or a visitor
+						wanting to
+						know more about our academic community, this platform offers easy access to the expertise and
+						achievements
+						of our educators.</p>
+					<img src="mission.png" alt="Mission Vision" style="width: 100%; border-radius: 10px;">
+				</div>
+			</div>
+			<div class="centered-note">Welcome to the Faculty Profile Portal!</div>
+		</section>
+
+		<section id="professors">
+			<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+				<input type="text" id="searchName" placeholder="*Professor name*"
+					style="padding: 10px; border-radius: 15px; width: 300px; border: none;">
+				<button style="border-radius: 20px; padding: 8px 16px; background: #ccc;"
+					onclick="searchProfessor()">Search</button>
+			</div>
+
+			<div style="display: flex; gap: 20px; flex-wrap: wrap;">
+				<div
+					style="flex: 1; min-width: 250px; background: #f1f1f1; border-radius: 10px; text-align: center; padding: 10px;">
+					<img src="turtle.png" style="width: 100%; border-radius: 10px;" alt="Professor">
+				</div>
+
+				<div style="flex: 2; min-width: 300px;">
+					<div style="background: #e3e3e3; border-radius: 10px; padding: 20px; margin-bottom: 10px;">
+						<strong>About:</strong><br>
+						About person, native, other interesting information, qualification including education
+					</div>
+
+					<div style="display: flex; gap: 20px;">
+						<div style="display: flex; flex-direction: column; gap: 10px;">
+							<button onclick="showInfo('research')"
+								style="background-color: #7ebdb8; border: none; padding: 10px; border-radius: 10px;">Research
+								interests</button>
+							<button onclick="showInfo('publications')"
+								style="background-color: #7ebdb8; border: none; padding: 10px; border-radius: 10px;">Publications</button>
+							<button onclick="showInfo('courses')"
+								style="background-color: #7ebdb8; border: none; padding: 10px; border-radius: 10px;">Courses
+								handled</button>
+							<button onclick="showInfo('contact')"
+								style="background-color: #7ebdb8; border: none; padding: 10px; border-radius: 10px;">Contact</button>
+						</div>
+
+						<div id="infoBox"
+							style="flex: 1; background-color: #9fd3ce; padding: 20px; border-radius: 10px;">
+							*Topics the faculty is interested in to research*
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+		
+			<div id="professorList" style="margin-top: 30px;"></div>
+		</section>
+
+		<section id="about">
+			<div class="side-note">The Courses Offered!</div>
+			<div style="display: flex; gap: 20px;">
+				<div style="flex: 2;">
+					<ul>
+						<li><strong>Undergraduate (UG)</strong>
+							<ul>
+								<li>Computer Science & Engineering (AI & ML, Data Science, IoT)</li>
+								<li>Electronics & Computer Engineering (AI & ML)</li>
+								<li>Electronics & Communication Engineering</li>
+								<li>Electrical & Electronics Engineering</li>
+								<li>Mechanical Engineering</li>
+								<li>Automobile Engineering</li>
+								<li>Civil Engineering (Construction Engg. & Mgmt, AI & ML)</li>
+								<li>Robotics & Mechatronics</li>
+								<li>Information Technology</li>
+							</ul>
+						</li>
+						<li><strong>Architecture</strong> (B.Arch – 5 years)</li>
+						<li><strong>Business & Management</strong> (BBA – 3 years)</li>
+						<li><strong>Social Sciences</strong> (B.Sc Psychology Honours – 3/4 years)</li>
+					</ul>
+				</div>
+				<div style="flex: 1;">
+					<img src="building.png" alt="Christ Campus" style="width: 100%; border-radius: 10px;">
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer style="text-align: center; background-color: #003b35; color: white; padding: 15px;">
+		&copy; 2025 Faculty Profile Portal
+	</footer>
+
+	<script>
+
+		function showSection(id) {
+			document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+			document.getElementById(id).classList.add('active');
+		}
+
+
+	</script>
+</body>
+
+</html

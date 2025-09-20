@@ -15,22 +15,29 @@ async function searchProfessor() {
   }
 
   try {
-    // Corrected fetch URL to use a query parameter
+    // Corrected fetch URL to use a query parameter as per the server.js fix
     const res = await fetch(`https://faculty-profile-93bu.onrender.com/professors?search=${encodeURIComponent(name)}`);
-    if (!res.ok) throw new Error("Network response was not ok");
-    const profs = await res.json(); // The backend now returns an array of professors
 
+    if (!res.ok) throw new Error("Network response was not ok");
+
+    // The server now returns an array of professors, not a single object.
+    const profs = await res.json();
+
+    // Check if the array contains at least one professor
     if (profs.length > 0) {
-      // Assuming you want to display the first match
+      // Access the first professor in the array
       const prof = profs[0];
+
+      // Update the page elements with data from the first professor
       aboutBox.innerHTML = `<strong>About:</strong><br>${prof.about || "N/A"}`;
       infoBox.innerHTML = prof.research || "*Topics the faculty is interested in to research*";
       profImage.src = prof.image || "images/turtle.png"; // fallback image
       profImage.alt = prof.name;
 
-      // Optionally store other details for button clicks
+      // Store other details for button clicks
       window.currentProf = prof;
     } else {
+      // If the array is empty, no professors were found
       aboutBox.innerHTML = "No professor found.";
       infoBox.innerHTML = "";
       profImage.src = "images/turtle.png";

@@ -21,41 +21,36 @@
 		</nav>
 
 		<main>
+			<!-- Home Section -->
 			<section id="home" class="active">
 				<div class="flex-container">
 					<div class="box">
 						<img src="images/professor.png" alt="Faculty Group">
 					</div>
 					<div class="box">
-						<p>Welcome to the official faculty profile website. Here, you can explore detailed information
-							about our distinguished faculty members, including their academic qualifications, research
-							interests, publications, courses taught, and contact information.</p>
-						<p>Whether you're a student looking for guidance, a researcher seeking collaboration, or a
-							visitor
-							wanting to know more about our academic community, this platform offers easy access to the
-							expertise and achievements of our educators.</p>
+						<p>Welcome to the official faculty profile website...</p>
 						<img src="images/mission.png" alt="Mission Vision">
 					</div>
 				</div>
 				<div class="centered-note">Welcome to the Faculty Profile Portal!</div>
 			</section>
 
+			<!-- Professors Section -->
 			<section id="professors">
 				<div class="search-container">
 					<input type="text" id="searchName" placeholder="*Professor name*">
 					<button onclick="searchProfessor()">Search</button>
 				</div>
-
+			
 				<div class="professor-display">
 					<div class="prof-image">
-						<img src="images/turtle.png" alt="Professor">
+						<img id="profImage" src="images/turtle.png" alt="Professor">
 					</div>
 					<div class="prof-info">
-						<div class="about-box">
-							<strong>About:</strong><br>
+						<div class="about-box" id="aboutBox">
 							About person, native, other interesting information, qualification including education
 						</div>
-
+			
 						<div class="info-buttons">
 							<div class="btn-column">
 								<button onclick="showInfo('research')">Research interests</button>
@@ -67,10 +62,12 @@
 						</div>
 					</div>
 				</div>
-
+			
 				<div id="professorList"></div>
 			</section>
 
+
+			<!-- About Section -->
 			<section id="about">
 				<div class="side-note">The Courses Offered!</div>
 				<div class="about-flex">
@@ -104,9 +101,9 @@
 		<footer>
 			&copy; 2025 Faculty Profile Portal
 		</footer>
-
-		<script src="js/script.js" defer></script>
 	</div>
+
+	<script src="js/script.js" defer></script>
 </body>
 
 </html>

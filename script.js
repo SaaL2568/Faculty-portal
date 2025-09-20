@@ -8,7 +8,7 @@ async function searchProfessor() {
   if (!name) return;
 
   try {
-    const res = await fetch(`https://faculty-backend.onrender.com/professors/search/${name}`);
+    const res = await fetch("https://faculty-profile-93bu.onrender.com/professors/search/" + name);
     const prof = await res.json();
 
     if (prof && prof.name) {

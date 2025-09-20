@@ -1,0 +1,259 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #c4c8c7;
+}
+
+header {
+    background-color: #d1d1d1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    left: 20px;
+    height: 80px;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: #003b35;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 100px;
+}
+
+nav a {
+    background-color: #189d91;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+    width: 200px;
+    font-size: 22px;
+}
+
+nav a:hover {
+    background-color: #117a72;
+}
+
+main {
+    padding: 30px;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #003b35;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    background: #d9d9d9;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.centered-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    background: #9b9999;
+    padding: 10px 25px;
+    border-radius: 50% / 60%;
+    width: 450px;
+    height: 80px;
+    position: absolute;
+    top: 680px;
+    left: 130px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 15px;
+    width: 300px;
+    border: none;
+}
+
+.search-container button {
+    border-radius: 20px;
+    padding: 8px 16px;
+    background: #ccc;
+}
+
+.professor-display {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.prof-image {
+    flex: 1;
+    min-width: 250px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.prof-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prof-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-box {
+    background: #e3e3e3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.info-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-column button {
+    background-color: #7ebdb8;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#infoBox {
+    flex: 1;
+    background-color: #9fd3ce;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.about-flex div:first-child {
+    flex: 2;
+}
+
+.about-flex div:last-child {
+    flex: 1;
+}
+
+.about-flex img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #003b35;
+    color: white;
+    padding: 15px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+}
+
+main {
+    flex: 1; /* take all remaining space */
+}
+
+footer {
+    text-align: center;
+    background-color: #003b35;
+    color: white;
+    padding: 15px;
+}

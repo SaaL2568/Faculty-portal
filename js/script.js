@@ -8,6 +8,7 @@ async function searchProfessor() {
   const infoBox = document.getElementById("infoBox");
   const aboutBox = document.getElementById("aboutBox");
   const profImage = document.getElementById("profImage");
+  const profName = document.getElementById("profName"); // Assuming profName is the ID of the element to display professor's name
 
   if (!name) {
     infoBox.innerHTML = "Please enter a name.";
@@ -33,6 +34,11 @@ async function searchProfessor() {
       infoBox.innerHTML = prof.research || "*Topics the faculty is interested in to research*";
       profImage.src = prof.image || "images/turtle.png"; // fallback image
       profImage.alt = prof.name;
+
+      // Update the professor's name
+      if (profName) {
+        profName.textContent = prof.name || "Professor Name";
+      }
 
       // Store other details for button clicks
       window.currentProf = prof;

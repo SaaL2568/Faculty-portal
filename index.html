@@ -38,19 +38,20 @@
 			<!-- Professors Section -->
 			<section id="professors">
 				<div class="search-container">
-					<input type="text" id="searchName" placeholder="*Professor name*">
+				<input type="text" id="searchName" placeholder="Search by professor name...">
 					<button onclick="searchProfessor()">Search</button>
 				</div>
-			
+
 				<div class="professor-display">
 					<div class="prof-image">
+						<div id="profName" class="prof-name">Professor Name</div>
 						<img id="profImage" src="images/turtle.png" alt="Professor">
 					</div>
 					<div class="prof-info">
 						<div class="about-box" id="aboutBox">
-							About person, native, other interesting information, qualification including education
+							Enter a professor's name above and click Search to view their profile information.
 						</div>
-			
+
 						<div class="info-buttons">
 							<div class="btn-column">
 								<button onclick="showInfo('research')">Research interests</button>
@@ -62,7 +63,7 @@
 						</div>
 					</div>
 				</div>
-			
+
 				<div id="professorList"></div>
 			</section>
 

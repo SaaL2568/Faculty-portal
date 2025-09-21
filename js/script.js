@@ -16,7 +16,7 @@ async function searchProfessor() {
 
   try {
     // Corrected fetch URL to use a query parameter as per the server.js fix
-    const res = await fetch(`https://faculty-profile-93bu.onrender.com/professors?search=${encodeURIComponent(name)}`);
+    const res = await fetch('https://faculty-profile-93bu.onrender.com/professors?search=' + encodeURIComponent(name));
 
     if (!res.ok) throw new Error("Network response was not ok");
 
